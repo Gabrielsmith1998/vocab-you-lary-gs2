@@ -34,6 +34,24 @@ const updateVocab = (vocabObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getTechOne = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="language"&equalTo="Tech 1"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+const getTechTwo = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="language"&equalTo="Tech 2"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+const getTechThree = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="language"&equalTo="Tech 3"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
 const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/vocab/${firebaseKey}.json`)
     .then(() => {
@@ -47,5 +65,8 @@ export {
   createVocab,
   getSingleVocab,
   updateVocab,
-  deleteVocab
+  deleteVocab,
+  getTechOne,
+  getTechTwo,
+  getTechThree
 };
