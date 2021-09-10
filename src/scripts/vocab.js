@@ -4,7 +4,7 @@ const showVocab = (array) => {
   clearDom();
   array.forEach((vocab) => {
     document.querySelector('#vocab').innerHTML += `
-          <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${vocab.title}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${vocab.description}</h6>
